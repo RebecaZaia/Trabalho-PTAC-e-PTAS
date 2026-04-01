@@ -1,17 +1,21 @@
-import { Login } from "@/components/ui/login";
+import { LoginForm } from "@/components/ui/login";
 import Link from "next/link";
 export default function PaginaLogin(){
     return(
-        <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-                <Login />
+        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+            <div className="mb-6 text-center">
+                <h1 className="text-2xl font-bold text-gray-800">
+                    Instituto Federal
+                </h1>
+                <p className="text-gray-600">Mato Grosso do Sul</p>
+            </div>
+      
+            <main className="flex flex-1 w-full max-w-3xl flex-col items-center py-10 px-16 bg-green-100 dark:bg-black p-8 rounded-2xl shadow-md w-[350px]">
+                <h2 className="text-2xl font-bold text-green-700 mb-6 w-full sm:items-start">
+                    Entrar
+                </h2>
+                <LoginForm />
             </main>
-            <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">
-              <a href="/cadastrar">Cadastrar</a>
-            </button>
-            <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">
-              <Link href="/">Voltar para Home</Link>
-            </button>
         </div>
     )
 }

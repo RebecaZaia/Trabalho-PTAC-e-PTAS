@@ -1,6 +1,24 @@
-import { Login } from "@/app/login/page";
+import Header from "@/components/layout/header";
+import Filters from "@/components/feed/filters";
+import PostList from "@/components/feed/postList";
+import HeroCarousel from "@/components/layout/heroCarousel";
 
 export default function Home() {
+  return (
+    <div className="bg-gray-100 min-h-screen">
+      <Header />
+
+      <HeroCarousel />
+
+      <div className="max-w-5xl mx-auto p-6">
+        <Filters />
+        <PostList />
+      </div>
+    </div>
+  );
+}
+
+/*export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
@@ -16,4 +34,4 @@ export default function Home() {
       </main>
     </div>
   );
-}
+}*/

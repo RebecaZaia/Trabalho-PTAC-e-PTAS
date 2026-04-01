@@ -1,4 +1,4 @@
-import Link from "next/link";
+/*import Link from "next/link";
 
 export default function PaginaCadastrar(){
     return(
@@ -16,4 +16,51 @@ export default function PaginaCadastrar(){
             </main>
         </div>
     )
+}*/
+
+export default function CadastroPage() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+
+      {/* Logo */}
+      <div className="mb-6 text-center">
+        <h1 className="text-2xl font-bold text-gray-800">
+          Instituto Federal
+        </h1>
+        <p className="text-gray-600">Mato Grosso do Sul</p>
+      </div>
+
+      {/* Card */}
+      <div className="bg-green-100 p-8 rounded-2xl shadow-md w-[350px]">
+        <h2 className="text-2xl font-bold text-green-700 mb-6">
+          Cadastrar
+        </h2>
+
+        <form className="flex flex-col gap-4">
+
+          <input placeholder="Nome completo" className="p-2 rounded-md border" />
+          <input placeholder="CPF" className="p-2 rounded-md border" />
+          <input placeholder="E-mail" className="p-2 rounded-md border" />
+          <input type="password" placeholder="Senha" className="p-2 rounded-md border" />
+          <input type="password" placeholder="Confirme sua senha" className="p-2 rounded-md border" />
+
+          <button className="bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
+            Acessar
+          </button>
+
+          <p className="text-sm text-center">
+            Já possui uma conta?{" "}
+            <a href="/login" className="text-green-700 font-semibold">
+              Login
+            </a>
+          </p>
+
+          <p className="text-sm text-center text-green-700">
+            Entrar como visitante
+          </p>
+
+        </form>
+      </div>
+    </div>
+  );
 }
