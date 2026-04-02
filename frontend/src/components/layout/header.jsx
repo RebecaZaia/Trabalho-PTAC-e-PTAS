@@ -10,7 +10,7 @@ export default function Header() {
         IFMS
       </div>
 
-      <div className="w-1/3">
+      <div className="w-1/3 bg-amber-50 rounded-md">
         <Input placeholder="Faça sua pesquisa aqui" />
       </div>
 
@@ -22,7 +22,9 @@ export default function Header() {
         <Bell />
 
         <Button className="bg-green-700 hover:bg-green-800">
-          Entrar
+          <a href="/login">
+            Entrar
+          </a>
         </Button>
       </div>
     </header>

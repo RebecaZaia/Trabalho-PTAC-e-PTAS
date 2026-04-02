@@ -1,5 +1,5 @@
 import { LoginForm } from "@/components/ui/login";
-import Link from "next/link";
+
 export default function PaginaLogin(){
     return(
         <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">

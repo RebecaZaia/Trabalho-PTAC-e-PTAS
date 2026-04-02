@@ -1,28 +1,9 @@
-/*import Link from "next/link";
+import Link from "next/link";
 
 export default function PaginaCadastrar(){
-    return(
-        <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-            <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-                <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-                    Cadastrar
-                </h1>
-                <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
-                    <a href="/login">Voltar para o Login</a>
-                </button>
-                <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">
-                    <Link href="/">Voltar para Home</Link>
-                </button>
-            </main>
-        </div>
-    )
-}*/
-
-export default function CadastroPage() {
-  return (
+  return(
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
 
-      {/* Logo */}
       <div className="mb-6 text-center">
         <h1 className="text-2xl font-bold text-gray-800">
           Instituto Federal
@@ -30,19 +11,39 @@ export default function CadastroPage() {
         <p className="text-gray-600">Mato Grosso do Sul</p>
       </div>
 
-      {/* Card */}
-      <div className="bg-green-100 p-8 rounded-2xl shadow-md w-[350px]">
-        <h2 className="text-2xl font-bold text-green-700 mb-6">
+      <main className="flex flex-1 w-full max-w-3xl flex-col items-center py-10 px-16 bg-green-100 dark:bg-black p-8 rounded-2xl shadow-md w-[350px]">
+        <h2 className="text-2xl font-bold text-green-700 mb-6 w-full sm:items-start">
           Cadastrar
         </h2>
 
         <form className="flex flex-col gap-4">
+          <div>
+        <label className="text-sm text-gray-700">
+          Identificação de usuário
+        </label>
+        <input
+          type="text"
+          placeholder="E-mail ou CPF"
+          className="w-full p-2 rounded-md border bg-white border-green-700"
+        />
+      </div>
 
-          <input placeholder="Nome completo" className="p-2 rounded-md border" />
-          <input placeholder="CPF" className="p-2 rounded-md border" />
-          <input placeholder="E-mail" className="p-2 rounded-md border" />
-          <input type="password" placeholder="Senha" className="p-2 rounded-md border" />
-          <input type="password" placeholder="Confirme sua senha" className="p-2 rounded-md border" />
+      <div className="grid gap-2">
+        <label className="text-sm text-gray-700">Senha</label>
+        <input
+          type="password"
+          placeholder="Insira sua senha"
+          className="w-full p-2 rounded-md border bg-white border-green-700"
+        />
+        <a href="#" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+          Esqueceu sua senha?
+        </a>
+      </div>
+          <input placeholder="Nome completo" className="p-2 rounded-md border bg-white" />
+          <input placeholder="CPF" className="p-2 rounded-md border bg-white" />
+          <input placeholder="E-mail" className="p-2 rounded-md border bg-white" />
+          <input type="password" placeholder="Senha" className="p-2 rounded-md border bg-white" />
+          <input type="password" placeholder="Confirme sua senha" className="p-2 rounded-md border bg-white" />
 
           <button className="bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
             Acessar
@@ -56,11 +57,13 @@ export default function CadastroPage() {
           </p>
 
           <p className="text-sm text-center text-green-700">
-            Entrar como visitante
+            <Link href="/" className="text-green-700 font-semibold">
+              Entrar como visitante
+            </Link>
           </p>
 
         </form>
-      </div>
+      </main>
     </div>
-  );
+  )
 }
