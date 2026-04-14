@@ -29,33 +29,33 @@ export default function PaginaCadastrar(){
           </div>
           <div>
               <label className="text-sm text-gray-700">
-
+                Nome
               </label>
-              <input placeholder="Nome completo" className="w-full p-2 rounded-md border bg-white border-green-700" />
+              <input placeholder="Insira seu nome completo" className="w-full p-2 rounded-md border bg-white border-green-700" />
           </div>
           <div>
               <label className="text-sm text-gray-700">
-                
+                CPF
               </label>
-              <input placeholder="CPF" className="w-full p-2 rounded-md border bg-white border-green-700" />
+              <input placeholder="Insira seu CPF" className="w-full p-2 rounded-md border bg-white border-green-700" />
           </div>
           <div>
             <label className="text-sm text-gray-700">
-              
+              E-mail
             </label>
-            <input placeholder="E-mail" className="w-full p-2 rounded-md border bg-white border-green-700" />
+            <input placeholder="Insira seu E-mail institucional" className="w-full p-2 rounded-md border bg-white border-green-700" />
           </div>
           <div>
             <label className="text-sm text-gray-700">
-              
+              Senha
             </label>
-            <input type="password" placeholder="Senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
+            <input type="password" placeholder="Insira sua senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
           </div>
           <div>
             <label className="text-sm text-gray-700">
-              
+              Confirmar Senha
             </label>
-            <input type="password" placeholder="Confirme sua senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
+            <input type="password" placeholder="Repita sua senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
           </div>
 
           <button className="bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
