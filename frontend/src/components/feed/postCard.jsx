@@ -44,7 +44,6 @@ export default function PostCard() {
           </p>
         </div>
 
-        {/* Ações */}
         <div className="flex items-center justify-between mt-4">
 
           <div className="flex gap-4 text-gray-600">
