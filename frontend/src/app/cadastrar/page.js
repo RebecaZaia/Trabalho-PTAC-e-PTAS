@@ -18,32 +18,45 @@ export default function PaginaCadastrar(){
 
         <form className="flex flex-col gap-4">
           <div>
-        <label className="text-sm text-gray-700">
-          Identificação de usuário
-        </label>
-        <input
-          type="text"
-          placeholder="E-mail ou CPF"
-          className="w-full p-2 rounded-md border bg-white border-green-700"
-        />
-      </div>
+            <label className="text-sm text-gray-700">
+              Identificação de usuário
+            </label>
+            <input
+              type="text"
+              placeholder="E-mail ou CPF"
+              className="w-full p-2 rounded-md border bg-white border-green-700"
+            />
+          </div>
+          <div>
+              <label className="text-sm text-gray-700">
 
-      <div className="grid gap-2">
-        <label className="text-sm text-gray-700">Senha</label>
-        <input
-          type="password"
-          placeholder="Insira sua senha"
-          className="w-full p-2 rounded-md border bg-white border-green-700"
-        />
-        <a href="#" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-          Esqueceu sua senha?
-        </a>
-      </div>
-          <input placeholder="Nome completo" className="p-2 rounded-md border bg-white" />
-          <input placeholder="CPF" className="p-2 rounded-md border bg-white" />
-          <input placeholder="E-mail" className="p-2 rounded-md border bg-white" />
-          <input type="password" placeholder="Senha" className="p-2 rounded-md border bg-white" />
-          <input type="password" placeholder="Confirme sua senha" className="p-2 rounded-md border bg-white" />
+              </label>
+              <input placeholder="Nome completo" className="w-full p-2 rounded-md border bg-white border-green-700" />
+          </div>
+          <div>
+              <label className="text-sm text-gray-700">
+                
+              </label>
+              <input placeholder="CPF" className="w-full p-2 rounded-md border bg-white border-green-700" />
+          </div>
+          <div>
+            <label className="text-sm text-gray-700">
+              
+            </label>
+            <input placeholder="E-mail" className="w-full p-2 rounded-md border bg-white border-green-700" />
+          </div>
+          <div>
+            <label className="text-sm text-gray-700">
+              
+            </label>
+            <input type="password" placeholder="Senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
+          </div>
+          <div>
+            <label className="text-sm text-gray-700">
+              
+            </label>
+            <input type="password" placeholder="Confirme sua senha" className="w-full p-2 rounded-md border bg-white border-green-700" />
+          </div>
 
           <button className="bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
             Acessar
