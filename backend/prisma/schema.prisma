@@ -14,11 +14,11 @@ datasource db {
 
 model usuarios {
   id_user     Int      @id @default(autoincrement())
-  nome        String?
-  cpf         String?
+  nome        String
+  cpf         String
   foto_perfil String?
-  email       String?
-  senha       String?
+  email       String
+  senha       String
 
   posts       posts[]
   comentarios comentarios[]
@@ -27,11 +27,11 @@ model usuarios {
 
 model projetos {
   id_proj       Int      @id @default(autoincrement())
-  nome          String?
-  conteudo      String?
-  data_inicial  DateTime?
-  data_final    DateTime?
-  data_cadastro DateTime?
+  nome          String
+  conteudo      String
+  data_inicial  DateTime
+  data_final    DateTime
+  data_cadastro DateTime
 
   posts     posts[]
   curtidas  curtidas[]
@@ -39,14 +39,14 @@ model projetos {
 
 model posts {
   id_post   Int      @id @default(autoincrement())
-  conteudo  String?
-  date_hora DateTime?
+  conteudo  String
+  date_hora DateTime
 
-  id_user Int?
-  id_proj Int?
+  id_user Int
+  id_proj Int
 
-  usuario usuarios? @relation(fields: [id_user], references: [id_user])
-  projeto projetos? @relation(fields: [id_proj], references: [id_proj])
+  usuario usuarios @relation(fields: [id_user], references: [id_user])
+  projeto projetos @relation(fields: [id_proj], references: [id_proj])
 
   comentarios comentarios[]
   curtidas    curtidas[]
@@ -56,7 +56,7 @@ model comentarios {
   id_post   Int
   id_user   Int
   date_hora DateTime
-  comentario String?
+  comentario String
 
   post    posts    @relation(fields: [id_post], references: [id_post])
   usuario usuarios @relation(fields: [id_user], references: [id_user])
@@ -67,11 +67,11 @@ model comentarios {
 model curtidas {
   id_post Int
   id_user Int
-  id_proj Int?
+  id_proj Int
 
   post    posts    @relation(fields: [id_post], references: [id_post])
   usuario usuarios @relation(fields: [id_user], references: [id_user])
-  projeto projetos? @relation(fields: [id_proj], references: [id_proj])
+  projeto projetos @relation(fields: [id_proj], references: [id_proj])
 
   @@id([id_post, id_user])
 }
