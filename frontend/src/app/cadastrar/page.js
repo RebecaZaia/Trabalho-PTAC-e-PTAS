@@ -18,16 +18,6 @@ export default function PaginaCadastrar(){
 
         <form className="flex flex-col gap-4">
           <div>
-            <label className="text-sm text-gray-700">
-              Identificação de usuário
-            </label>
-            <input
-              type="text"
-              placeholder="E-mail ou CPF"
-              className="w-full p-2 rounded-md border bg-white border-green-700"
-            />
-          </div>
-          <div>
               <label className="text-sm text-gray-700">
                 Nome
               </label>
