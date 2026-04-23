@@ -6,7 +6,7 @@ import { toNodeHandler } from "better-auth/node";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5500;
 
 // Middleware
 app.use(express.json());
@@ -17,7 +17,19 @@ app.all("/api/auth/*path", toNodeHandler(auth));
 
 // Health check
 app.get("/health", (req, res) => {
-  res.json({ status: "OK" });
+  res.json({ status: "OK", timestamp: new Date().toISOString() });
+});
+
+// Rota de teste
+app.get("/", (req, res) => {
+  res.json({
+    message: "🚀 MinURL API rodando!",
+    version: "1.0.0",
+    endpoints: {
+      health: "/health",
+      docs: "/api/docs",
+    },
+  });
 });
 
 // Iniciar servidor

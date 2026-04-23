@@ -1,46 +1,56 @@
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-model usuarios {
-  id_user     Int      @id @default(autoincrement())
-  nome        String?
-  cpf         String
-  foto_perfil String?
-  email       String  @unique
-  senha       String
+
+model User {
+  id_user     Int     @id @default(autoincrement())
+  name          String?
+  cpf           String
+  image         String?
+  email         String
+  emailVerified Boolean   @default(false)
+  password      String
 
   posts       posts[]
   comentarios comentarios[]
   curtidas    curtidas[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+
+  @@unique([email])
+  @@map("user")
 }
 
 model projetos {
-  id_proj       Int      @id @default(autoincrement())
+  id_proj       String   @id @default(uuid())
   nome          String
   conteudo      String
   data_inicial  DateTime
   data_final    DateTime
   data_cadastro DateTime
 
-  posts     posts[]
-  curtidas  curtidas[]
+  posts    posts[]
+  curtidas curtidas[]
 }
 
 model posts {
-  id_post   Int      @id @default(autoincrement())
+  id_post   String   @id @default(uuid())
   conteudo  String
   date_hora DateTime
 
   id_user Int
-  id_proj Int
+  id_proj String
 
-  usuario usuarios @relation(fields: [id_user], references: [id_user])
+  usuario User @relation(fields: [id_user], references: [id_user])
   projeto projetos @relation(fields: [id_proj], references: [id_proj])
 
   comentarios comentarios[]
@@ -48,25 +58,72 @@ model posts {
 }
 
 model comentarios {
-  id_post   Int
-  id_user   Int
-  date_hora DateTime
+  id_post    String
+  id_user    Int
+  date_hora  DateTime
   comentario String
 
   post    posts    @relation(fields: [id_post], references: [id_post])
-  usuario usuarios @relation(fields: [id_user], references: [id_user])
+  usuario User @relation(fields: [id_user], references: [id_user])
 
   @@id([id_post, id_user, date_hora])
 }
 
 model curtidas {
-  id_post Int
+  id_post String
   id_user Int
-  id_proj Int
+  id_proj String
 
   post    posts    @relation(fields: [id_post], references: [id_post])
-  usuario usuarios @relation(fields: [id_user], references: [id_user])
+  usuario User @relation(fields: [id_user], references: [id_user])
   projeto projetos @relation(fields: [id_proj], references: [id_proj])
 
   @@id([id_post, id_user])
+}
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id_user], onDelete: Cascade)
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                Int
+  user                  User      @relation(fields: [userId], references: [id_user], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
 }
