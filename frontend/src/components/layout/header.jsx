@@ -1,6 +1,7 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Bell } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
+import { Input } from "@/components/ui/input"
 
 export default function Header() {
   return (
@@ -10,9 +11,10 @@ export default function Header() {
         IFMS
       </div>
 
-      <div className="w-1/3 bg-amber-50 rounded-md">
-        <Input placeholder="Faça sua pesquisa aqui" />
-      </div>
+      <ButtonGroup>
+        <Input id="input-button-group" className="w-2xl bg-amber-50" placeholder="Digite para pesquisar..." />
+        <Button variant="outline">🔍</Button>
+      </ButtonGroup>
 
       <div className="flex items-center gap-4 text-white">
         <span>categ ex1</span>
