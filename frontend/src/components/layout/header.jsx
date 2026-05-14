@@ -19,7 +19,7 @@ export default function Header() {
       </div>
 
       <ButtonGroup>
-        <Input id="input-button-group" className="w-2xl bg-amber-50" placeholder="Digite para pesquisar..." />
+        <Input id="input-button-group" className="w-2xl bg-white" placeholder="Digite para pesquisar..." />
         <Button variant="outline">🔍</Button>
       </ButtonGroup>
 
