@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input"
 export default function Page() {
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10 bg-gray-100">
-      <div className="w-full max-w-3xl py-10 px-16 bg-green-100 dark:bg-black p-8 rounded-2xl shadow-md">
+      <div className="w-full max-w-3xl py-10 px-16 bg-green-200 dark:bg-black p-8 rounded-2xl shadow-md">
         <h2 className="text-2xl font-bold text-green-700 mb-6 w-full sm:items-start">
             Entrar
         </h2>
